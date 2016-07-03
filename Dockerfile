@@ -20,9 +20,8 @@ RUN groupadd -r jboss -g 2000 \
  && chmod -R 755 /home/jboss \
  && mkdir /opt/jboss \
  && chown -R jboss:jboss /opt/jboss \
- && chmod 755 /opt/jboss
-
-RUN echo 'jboss ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+ && chmod 755 /opt/jboss \
+ && echo 'jboss ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 USER jboss
 
