@@ -3,9 +3,9 @@ FROM 1000kit/base-jdk
 MAINTAINER 1000kit <docker@1000kit.org>
 
 
-LABEL Vendor="1000kit"
-LABEL License=GPLv3
-LABEL Version=1.0.0
+LABEL Vendor="1000kit" \
+      License=GPLv3 \
+      Version=1.0.0
 
 # install User
 USER root
@@ -26,9 +26,9 @@ RUN groupadd -r jboss -g 2000 \
 USER jboss
 
 # Set the WILDFLY_VERSION env variable
-ENV WILDFLY_VERSION 10.1.0.Final
-ENV WILDFLY_SHA1 9ee3c0255e2e6007d502223916cefad2a1a5e333
-ENV JBOSS_HOME /opt/jboss/wildfly
+ENV WILDFLY_VERSION=10.1.0.Final \
+    WILDFLY_SHA1=9ee3c0255e2e6007d502223916cefad2a1a5e333 \
+    JBOSS_HOME=/opt/jboss/wildfly
 
 
 # Add the WildFly distribution to /opt, and make wildfly the owner of the extracted tar content

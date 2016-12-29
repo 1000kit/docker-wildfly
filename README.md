@@ -5,7 +5,7 @@ This repository contains `JBoss Wildfly` image.
 
 ### Installed versions:
 
- Wildfly 10.0.0.Final
+ Wildfly 10.1.0.Final
 
 ### Availability
 
@@ -21,3 +21,8 @@ $ docker build -t 1000kit/wildfly .
 
 or simply use the `build.sh` script
 
+##RUN
+
+~~~~
+$ docker run -it 1000kit/wildfly
+~~~~
