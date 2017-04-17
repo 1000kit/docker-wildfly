@@ -16,7 +16,7 @@ USER root
 # making it easier to use volumes (no permission issues)
 
 RUN groupadd -r jboss -g 2000 \
- && useradd -u 2000 -r -g jboss -m -d /home/jboss -s /sbin/nologin -c "jboss user" jboss \
+ && useradd -l -u 2000 -r -g jboss -m -d /home/jboss -s /sbin/nologin -c "jboss user" jboss \
  && chmod -R 755 /home/jboss \
  && mkdir /opt/jboss \
  && chown -R jboss:jboss /opt/jboss \
