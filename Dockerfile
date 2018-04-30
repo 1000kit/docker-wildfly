@@ -3,9 +3,9 @@ FROM 1000kit/base-jdk
 MAINTAINER 1000kit <docker@1000kit.org>
 
 
-LABEL Vendor="1000kit" \
-      License=GPLv3 \
-      Version=1.0.0
+LABEL org.1000kit.vendor="1000kit" \
+      org.1000kit.license=GPLv3 \
+      org.1000kit.version=1.0.0
 
 # install User
 USER root
@@ -15,8 +15,8 @@ USER root
 # so there is a high chance that this ID will be equal to the current user
 # making it easier to use volumes (no permission issues)
 
-RUN groupadd -r jboss -g 2000 \
- && useradd -l -u 2000 -r -g jboss -m -d /home/jboss -s /sbin/nologin -c "jboss user" jboss \
+RUN groupadd -r jboss -g 1000 \
+ && useradd -l -u 1000 -r -g jboss -m -d /home/jboss -s /sbin/nologin -c "jboss user" jboss \
  && chmod -R 755 /home/jboss \
  && mkdir /opt/jboss \
  && chown -R jboss:jboss /opt/jboss \
@@ -26,8 +26,8 @@ RUN groupadd -r jboss -g 2000 \
 USER jboss
 
 # Set the WILDFLY_VERSION env variable
-ENV WILDFLY_VERSION=10.1.0.Final \
-    WILDFLY_SHA1=9ee3c0255e2e6007d502223916cefad2a1a5e333 \
+ENV WILDFLY_VERSION=12.0.0.Final \
+    WILDFLY_SHA1=b2039cc4979c7e50a0b6ee0e5153d13d537d492f \
     JBOSS_HOME=/opt/jboss/wildfly
 
 
