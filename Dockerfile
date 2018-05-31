@@ -26,8 +26,8 @@ RUN groupadd -r jboss -g 1000 \
 USER jboss
 
 # Set the WILDFLY_VERSION env variable
-ENV WILDFLY_VERSION=12.0.0.Final \
-    WILDFLY_SHA1=b2039cc4979c7e50a0b6ee0e5153d13d537d492f \
+ENV WILDFLY_VERSION=13.0.0.Final \
+    WILDFLY_SHA1=3d63b72d9479fea0e3462264dd2250ccd96435f9 \
     JBOSS_HOME=/opt/jboss/wildfly
 
 
@@ -38,6 +38,7 @@ RUN cd $HOME \
     && sha1sum wildfly-$WILDFLY_VERSION.tar.gz | grep $WILDFLY_SHA1 \
     && tar xf wildfly-$WILDFLY_VERSION.tar.gz \
     && mv $HOME/wildfly-$WILDFLY_VERSION $JBOSS_HOME \
+    && echo "JAVA_OPTS=\"${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -Djava.net.preferIPv4Stack=true\"" >> ${JBOSS_HOME}/bin/standalone.conf \
     && rm wildfly-$WILDFLY_VERSION.tar.gz
     
 
