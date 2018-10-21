@@ -5,7 +5,7 @@ This repository contains `JBoss Wildfly` image.
 
 ### Installed versions:
 
- Wildfly 13.0.0.Final
+ Wildfly 14.0.1.Final
 
 ### Availability
 
