@@ -26,3 +26,4 @@ or simply use the `build.sh` script
 ~~~~
 $ docker run -it 1000kit/wildfly
 ~~~~
+
