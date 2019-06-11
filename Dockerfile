@@ -26,8 +26,8 @@ RUN groupadd -r jboss -g 1000 \
 USER jboss
 
 # Set the WILDFLY_VERSION env variable
-ENV WILDFLY_VERSION=15.0.1.Final \
-    WILDFLY_SHA1=23d6a5889b76702fc518600fc5b2d80d6b3b7bb1 \
+ENV WILDFLY_VERSION=17.0.0.Final \
+    WILDFLY_SHA1=50bf8c48d4faf27c530af6949a225b9f1428300e \
     JBOSS_HOME=/opt/jboss/wildfly
 
 
